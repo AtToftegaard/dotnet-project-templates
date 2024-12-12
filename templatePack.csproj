@@ -14,6 +14,7 @@
 		<RepositoryUrl>https://github.com/AtToftegaard/dotnet-project-templates</RepositoryUrl>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+		
 
 		<TargetFramework>netstandard2.0</TargetFramework>
 		<IncludeContentInPack>true</IncludeContentInPack>
@@ -29,6 +30,8 @@
 
 	<ItemGroup>
 		<PackageReference Include="Microsoft.TemplateEngine.Tasks" Version="*" PrivateAssets="all" IsImplicitlyDefined="true" />
+		<None Include="LICENSE.txt" Pack="true" PackagePath="" />
+		<None Include="README.md" Pack="true" PackagePath=""/>
 	</ItemGroup>
 
 	<ItemGroup>
