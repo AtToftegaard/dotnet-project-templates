@@ -9,6 +9,7 @@ on:
       PackageVersion:
         description: 'Nuget package version.'
         required: true
+        default: '1.0.0'
 jobs:
   build:
     runs-on: ubuntu-latest
