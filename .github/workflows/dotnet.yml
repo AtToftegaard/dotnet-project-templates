@@ -27,7 +27,7 @@ jobs:
       uses: gittools/actions/gitversion/execute@v3.1.1
       with:
         overrideConfig: |
-          ${{ github.event.inputs.PackageVersion != '' && 'next-version='github.event.inputs.PackageVersion'' || '' }}
+          ${{ github.event.inputs.PackageVersion != '' && 'next-version=1.2.3' || '' }}
         useConfigFile: true
     - name: Pack
       run: dotnet pack -o Artifacts /p:PackageVersion=${{ steps.version_step.outputs.fullSemVer }}
