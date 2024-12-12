@@ -1,0 +1,20 @@
+{
+  "identities": [
+    {
+      "name": "odis",
+      "credentials": [
+        {
+          "accessKey": "notSecret",
+          "secretKey": "verySecret"
+        }
+      ],
+      "actions": [
+        "Read",
+        "Write",
+        "List",
+        "Tagging",
+        "Admin"
+      ]
+    }
+  ]
+}

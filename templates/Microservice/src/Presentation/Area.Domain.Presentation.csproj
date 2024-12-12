@@ -1,0 +1,50 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <RootNamespace>Area.Domain</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+	<CodeAnalysisRuleSet>..\..\stylecop.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+
+	<PropertyGroup>
+		<TreatWarningsAsErrors Condition="$(Configuration) == 'Debug'">true</TreatWarningsAsErrors>
+	</PropertyGroup>
+
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+		<StyleCopTreatErrorsAsWarnings>false</StyleCopTreatErrorsAsWarnings>
+	</PropertyGroup>
+	
+  <ItemGroup>
+  	<PackageReference Include="OpenTelemetry.Exporter.Console" Version="1.9.0" />
+  	<PackageReference Include="OpenTelemetry.Exporter.Prometheus.AspNetCore" Version="1.7.0-rc.1" />
+  	<PackageReference Include="OpenTelemetry.Extensions.Hosting" Version="1.9.0" />
+  	<PackageReference Include="OpenTelemetry.Instrumentation.AspNetCore" Version="1.9.0" />
+	<PackageReference Include="NSwag.AspNetCore" Version="14.1.0"/>
+	<PackageReference Include="Serilog.Extensions.Logging" Version="8.0.0" />
+	<PackageReference Include="Serilog.Formatting.Compact" Version="3.0.0" />
+	<PackageReference Include="StyleCop.Analyzers" Version="1.1.118">
+	  <PrivateAssets>all</PrivateAssets>
+	  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+	</PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Core\Area.Domain.Application\Area.Domain.Application.csproj" />
+    <ProjectReference Include="..\Infrastructure\Area.Domain.Infrastructure\Area.Domain.Infrastructure.csproj" />
+    <ProjectReference Include="..\Infrastructure\Area.Domain.Persistence\Area.Domain.Persistence.csproj" />
+  </ItemGroup>
+
+	<ItemGroup>
+		<Content Include="appsettings.json">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Content>
+		<Content Include="appsettings.*.json">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+			<DependentUpon>appsettings.json</DependentUpon>
+		</Content>
+	</ItemGroup>
+
+</Project>

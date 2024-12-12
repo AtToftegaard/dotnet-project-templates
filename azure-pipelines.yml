@@ -1,0 +1,26 @@
+trigger:
+- master
+
+name: 1.0$(rev:.r)
+pool:
+  vmImage: ubuntu-latest
+
+variables:
+  Major: '$(rev:.r)'
+  Projects: templatePack.csproj
+
+steps:
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'pack'
+    packagesToPack: '$(Projects)'
+    versioningScheme: 'byBuildNumber'
+
+- task: NuGetCommand@2
+  inputs:
+    command: 'push'
+    packagesToPush: '$(Build.ArtifactStagingDirectory)/**/*.nupkg;!$(Build.ArtifactStagingDirectory)/**/*.symbols.nupkg'
+    nuGetFeedType: 'internal'
+    publishVstsFeed: 'b06d9610-16c1-4a60-8f88-a5d980533c12/e5d3d0c8-733a-460e-9d1d-c3a5ded50fbe'
+    allowPackageConflicts: true
+

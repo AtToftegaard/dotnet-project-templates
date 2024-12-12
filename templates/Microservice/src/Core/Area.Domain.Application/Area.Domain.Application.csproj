@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <RootNamespace>Area.Domain.Application</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+	  <CodeAnalysisRuleSet>..\..\..\stylecop.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+		<StyleCopTreatErrorsAsWarnings>false</StyleCopTreatErrorsAsWarnings>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<TreatWarningsAsErrors Condition="$(Configuration) == 'Debug'">true</TreatWarningsAsErrors>
+	</PropertyGroup>
+
+	<ItemGroup>
+	<PackageReference Include="FluentValidation" Version="11.10.0" />
+	<PackageReference Include="MediatR" Version="12.4.1" />
+	<PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="8.0.1" />
+	<PackageReference Include="StyleCop.Analyzers" Version="1.1.118">
+	  <PrivateAssets>all</PrivateAssets>
+	  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+	</PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Area.Domain.Domain\Area.Domain.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

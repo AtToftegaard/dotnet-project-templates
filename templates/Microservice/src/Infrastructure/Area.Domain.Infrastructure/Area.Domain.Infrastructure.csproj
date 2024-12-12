@@ -1,0 +1,37 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <RootNamespace>Area.Domain.Infrastructure</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+	<CodeAnalysisRuleSet>..\..\..\stylecop.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+
+	<PropertyGroup>
+		<TreatWarningsAsErrors Condition="$(Configuration) == 'Debug'">true</TreatWarningsAsErrors>
+	</PropertyGroup>
+
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+		<StyleCopTreatErrorsAsWarnings>false</StyleCopTreatErrorsAsWarnings>
+	</PropertyGroup>
+	
+  <ItemGroup>
+    <PackageReference Include="Mapster" Version="7.4.0" />
+    <PackageReference Include="Mapster.DependencyInjection" Version="1.0.1" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.2" />
+	<PackageReference Include="OpenTelemetry.Exporter.Console" Version="1.9.0" />
+	<PackageReference Include="OpenTelemetry.Exporter.Prometheus.AspNetCore" Version="1.7.0-rc.1" />
+	<PackageReference Include="OpenTelemetry.Extensions.Hosting" Version="1.9.0" />
+	<PackageReference Include="OpenTelemetry.Instrumentation.AspNetCore" Version="1.9.0" />
+	<PackageReference Include="StyleCop.Analyzers" Version="1.1.118">
+	  <PrivateAssets>all</PrivateAssets>
+	  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+	</PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\Area.Domain.Domain\Area.Domain.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

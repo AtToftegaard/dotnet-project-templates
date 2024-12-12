@@ -1,0 +1,12 @@
+{
+    "$schema": "http://json.schemastore.org/template",
+    "author": "Team Phoenix",
+    "classifications": [ "C#", "Docker" ],
+    "identity": "Microservice",
+    "name": "IGM Microservice",
+    "shortName": "MicroService",
+    "sourceName": "Area.Domain",
+    "tags": {
+        "language": "C#"
+    }
+}
