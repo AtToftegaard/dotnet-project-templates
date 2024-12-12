@@ -12,7 +12,7 @@ Install by either packing/installing locally i.e.
 
 2. `dotnet new install 'C:\Users\...\Project-Templates\bin\Debug\AtToftegaard.Templates.1.0.0.nupkg'`
 
-or installing from [nuget](missing link).
+or installing from [nuget](https://www.nuget.org/packages/AtToftegaard.Templates).
 
 ## How to install directly from feed
 
