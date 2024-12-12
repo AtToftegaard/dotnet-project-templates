@@ -1,17 +1,17 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<Title>.NET Project Templates</Title>
-		<Authors>Me</Authors>
+		<Title>Dotnet Project Templates</Title>
+		<Authors>Andreas Toftegaard</Authors>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 		<Description>
 			Templates for creating new .net projects.
 		</Description>
-		<PackageVersion>1.0</PackageVersion>
 		<PackageId>AtToftegaard.Templates</PackageId>
-		<PackageTags>dotnet-new;templates;</PackageTags>
+		<PackageTags>dotnet;.net;template;project</PackageTags>
 		<PackageType>Template</PackageType>
 		<PackageProjectUrl>https://github.com/AtToftegaard/dotnet-project-templates</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/AtToftegaard/dotnet-project-templates</RepositoryUrl>
 
 		<TargetFramework>netstandard2.0</TargetFramework>
 		<IncludeContentInPack>true</IncludeContentInPack>
