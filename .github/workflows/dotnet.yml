@@ -2,6 +2,11 @@ name: Publish to Nuget
 
 on:
   workflow_dispatch:
+    inputs:
+      PackageVersion:
+        description: 'Nuget package version. This will be passed as next-version to gitversion. Leave empty to use the generated version.'
+        required: false
+        default: ''
   push:
     branches:
       - master
@@ -21,6 +26,8 @@ jobs:
       id: version_step
       uses: gittools/actions/gitversion/execute@v3.1.1
       with:
+        overrideConfig: |
+          next-version='${{ github.event.inputs.PackageVersion }}'
         useConfigFile: true
     - name: Pack
       run: dotnet pack -o Artifacts /p:PackageVersion=${{ steps.version_step.outputs.fullSemVer }}
