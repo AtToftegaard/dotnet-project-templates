@@ -12,6 +12,8 @@
 		<PackageType>Template</PackageType>
 		<PackageProjectUrl>https://github.com/AtToftegaard/dotnet-project-templates</PackageProjectUrl>
 		<RepositoryUrl>https://github.com/AtToftegaard/dotnet-project-templates</RepositoryUrl>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
 
 		<TargetFramework>netstandard2.0</TargetFramework>
 		<IncludeContentInPack>true</IncludeContentInPack>
