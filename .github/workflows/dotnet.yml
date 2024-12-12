@@ -14,8 +14,20 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
+    - name: Checkout
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+    - name: Install GitVersion
+      uses: gittools/actions/gitversion/setup@v3.1.1
+      with:
+        versionSpec: '6.0.x'
+    - name: Determine Version
+      id: version_step
+      uses: gittools/actions/gitversion/execute@v3.1.1
+      with:
+        useConfigFile: true
     - name: Pack
-      run: dotnet pack -o Artifacts /p:PackageVersion=${{ github.event.inputs.PackageVersion }}
+      run: dotnet pack -o Artifacts /p:PackageVersion=${{ steps.version_step.outputs.fullSemVer }}
     - name: Push Nuget
-      run: nuget push $GITHUB_WORKSPACE/Artifacts/AtToftegaard.Templates.${{ github.event.inputs.PackageVersion }}.nupkg -Source https://api.nuget.org/v3/index.json -ApiKey ${{ secrets.NUGET_APIKEY }}
+      run: nuget push $GITHUB_WORKSPACE/Artifacts/AtToftegaard.Templates.${{ steps.version_step.outputs.fullSemVer }}.nupkg -Source https://api.nuget.org/v3/index.json -ApiKey ${{ secrets.NUGET_APIKEY }}
