@@ -4,11 +4,11 @@
 name: Nuget publish
 
 on:
-  push:
-    branches: [ "master" ]
-  pull_request:
-    branches: [ "master" ]
-
+  workflow_dispatch:
+    inputs:
+      PackageVersion:
+        description: 'Nuget package version.'
+        required: true
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -21,4 +21,4 @@ jobs:
     - name: Pack
       run: dotnet pack -o Artifacts
     - name: Push Nuget
-      run: nuget push $GITHUB_WORKSPACE/Artifacts/AtToftegaard.Templates.nupkg -Source https://api.nuget.org/v3/index.json -ApiKey ${{ secrets.NUGET_APIKEY }}
+      run: nuget push $GITHUB_WORKSPACE/Artifacts/AtToftegaard.Templates.$PackageVersion.nupkg -Source https://api.nuget.org/v3/index.json -ApiKey ${{ secrets.NUGET_APIKEY }}
