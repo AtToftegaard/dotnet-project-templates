@@ -17,8 +17,10 @@ jobs:
       with:
         versionSpec: '6.0.x'
     - name: Determine Version
-      id: version_step # step id used as reference for output values
+      id: version_step
       uses: gittools/actions/gitversion/execute@v3.1.1
+      with:
+        useConfigFile: true
     - name: Pack
       run: dotnet pack -o Artifacts /p:PackageVersion=${{ steps.version_step.outputs.fullSemVer }}
     - name: Push Nuget
