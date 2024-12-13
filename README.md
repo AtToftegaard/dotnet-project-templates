@@ -4,6 +4,8 @@ This project contains dotnet and visual studio templates.
 
 I find these useful for communicating the structure of a project to other developers, and increasing ease of new projects.
 
+It contains the following templates:
+
 ## How to use
 
 Install by either packing/installing locally i.e.
