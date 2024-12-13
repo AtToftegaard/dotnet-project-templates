@@ -1,10 +1,10 @@
 {
     "$schema": "http://json.schemastore.org/template",
-    "author": "Team Phoenix",
-    "classifications": [ "C#", "Docker" ],
-    "identity": "Microservice",
-    "name": "IGM Microservice",
-    "shortName": "MicroService",
+    "author": "Andreas Toftegaard",
+    "classifications": [ "C#", "Docker", "Microservice", "Onion-architecture", "domain-driven-design" ],
+    "identity": "OnionMicroservice",
+    "name": "Onion-Microservice-With-Domain-driven-design",
+    "shortName": "OnionMicroservice",
     "sourceName": "Area.Domain",
     "tags": {
         "language": "C#"

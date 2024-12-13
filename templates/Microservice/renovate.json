@@ -3,7 +3,6 @@
     "automerge": true,
     "automergeType": "pr",
     "platformAutomerge": true,
-    "azureWorkItemId": 455755,
     "packageRules": [
         {
             "matchPackagePatterns": [
@@ -16,6 +15,5 @@
             "groupName": "all-non-major-dependencies"
         }
     ],
-    "prHeader": "##Type of update \n - {{#if (isMajor)}}[ ]{{else}}[X]{{/if}} Patch \n - [ ] Feature \n - {{#if (isMajor)}}[X]{{else}}[ ]{{/if}} Breaking",
     "separateMajorMinor": true
 }
