@@ -32,4 +32,4 @@ jobs:
     - name: Pack
       run: dotnet pack -o Artifacts /p:PackageVersion=${{ steps.version_step.outputs.fullSemVer }}
     - name: Push Nuget
-      run: dotnet nuget push $GITHUB_WORKSPACE/Artifacts/AtToftegaard.Templates.${{ steps.version_step.outputs.fullSemVer }}.nupkg -Source https://api.nuget.org/v3/index.json -ApiKey ${{ secrets.NUGET_APIKEY }}
+      run: dotnet nuget push $GITHUB_WORKSPACE/Artifacts/AtToftegaard.Templates.${{ steps.version_step.outputs.fullSemVer }}.nupkg -source https://api.nuget.org/v3/index.json -ApiKey ${{ secrets.NUGET_APIKEY }}
